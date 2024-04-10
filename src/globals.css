@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 50px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #1F1F22;
+  }
+
+  body {
+    @apply bg-dark-1 text-white min-h-screen font-inter;
+  }
+}
+
+@layer utilities {
+
+  /* TYPOGRAPHY */
+  .h1-bold {
+    @apply text-[36px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .h1-semibold {
+    @apply text-[36px] font-semibold leading-[140%] tracking-tighter;
+  }
+
+  .h2-bold {
+    @apply text-[30px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .h3-bold {
+    @apply text-[24px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .base-semibold {
+    @apply text-[16px] font-semibold leading-[140%] tracking-tighter;
+  }
+
+  .base-medium {
+    @apply text-[16px] font-medium leading-[140%];
+  }
+
+  .base-regular {
+    @apply text-[16px] font-normal leading-[140%];
+  }
+
+  .body-bold {
+    @apply text-[18px] font-bold leading-[140%];
+  }
+
+  .body-medium {
+    @apply text-[18px] font-medium leading-[140%];
+  }
+
+  .small-semibold {
+    @apply text-[14px] font-semibold leading-[140%] tracking-tighter;
+  }
+
+  .small-medium {
+    @apply text-[14px] font-medium leading-[140%];
+  }
+
+  .small-regular {
+    @apply text-[14px] font-normal leading-[140%];
+  }
+
+  .subtle-semibold {
+    @apply text-[12px] font-semibold leading-[140%];
+  }
+
+  .tiny-medium {
+    @apply text-[10px] font-medium leading-[140%];
+  }
+
+  /* UTILITIES */
+  .invert-white {
+    @apply invert brightness-0 transition;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex flex-row justify-between items-center;
+  }
+
+  .flex-start {
+    @apply flex justify-start items-center;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #09090a;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #5c5c7b;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
+  }
+
+  .common-container {
+    @apply flex flex-col flex-1 items-center gap-10 py-10 px-5 md:px-8 lg:p-14;
+  }
+
+
+  /* Home */
+  .home-container {
+    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-8 lg:p-14 custom-scrollbar;
+  }
+
+  /* Note Details */
+  .notes_details-container {
+    @apply flex flex-col flex-1 gap-10 overflow-scroll py-10 px-5 md:p-14 custom-scrollbar items-center;
+  }
+
+
+  /* Topbar */
+  .topbar {
+    @apply sticky top-0 z-50 bg-dark-2/50 backdrop-blur-sm border-b border-b-dark-4 w-full;
+  }
+
+  /* Bottombar */
+  .bottombar {
+    @apply z-50 flex items-center justify-center w-full sticky bottom-0 backdrop-blur-sm bg-dark-2/50 px-5 py-4 md:hidden;
+  }
+}
+
+@layer components {
+
+  /* SHADCN COMPONENTS */
+  /* Form */
+  .shad-form_label {
+    @apply text-white !important;
+  }
+
+  .shad-form_message {
+    @apply text-red-600 !important;
+  }
+
+  .shad-input {
+    @apply h-12 bg-dark-4 border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+  }
+
+  .shad-textarea {
+    @apply h-36 bg-dark-4 rounded-xl border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+  }
+
+  /* Button */
+  .shad-button_primary {
+    @apply bg-dark-3 border border-light-4/35 hover:bg-dark-4 text-light-1 flex gap-2 !important;
+  }
+
+  .shad-button_danger {
+    @apply bg-red-600 hover:bg-red-500 text-light-1 flex gap-2 !important;
+  }
+
+  .shad-button_dark_4 {
+    @apply bg-dark-3 hover:bg-dark-4 px-5 text-light-1 flex gap-2 !important;
+  }
+
+  .shad-button_ghost {
+    @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-white !important;
+  }
+
+  /* Multi Select */
+
+  .my-react-select-container .my-react-select__control {
+    @apply bg-dark-4 border-none rounded-xl p-1;
+  }
+
+  .my-react-select-container .my-react-select__control--is-focused {
+    @apply bg-dark-4 ring-1 ring-offset-1 ring-offset-light-3;
+  }
+
+  .my-react-select-container .my-react-select__menu {
+    @apply bg-dark-4;
+  }
+
+  .my-react-select-container .my-react-select__option {
+    @apply bg-dark-4 hover:bg-dark-3 small-medium;
+  }
+
+  .my-react-select-container .my-react-select__indicator-separator {
+    @apply bg-dark-4;
+  }
+
+  .my-react-select-container .my-react-select__input-container,
+  .my-react-select-container .my-react-select__placeholder,
+  .my-react-select-container .my-react-select__single-value {
+    @apply bg-dark-4 text-light-1;
+  }
+
+  .my-react-select-container .my-react-select__multi-value {
+    @apply bg-dark-4 text-light-1 small-medium rounded-md border border-light-1;
+  }
+
+  .my-react-select-container .my-react-select__multi-value__label {
+    @apply text-light-1 small-medium;
+  }
+}
